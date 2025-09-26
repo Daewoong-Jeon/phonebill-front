@@ -2,7 +2,7 @@
 
 ## 프로젝트 정보
 - **서비스명**: phonebill-front (package.json의 "name" 필드에서 확인)
-- **빌드 날짜**: 2025-01-10
+- **빌드 날짜**: 2025-09-26
 - **Docker 이미지**: phonebill-front:latest
 
 ## 수행한 작업 순서
@@ -52,10 +52,12 @@ docker build \
 ```
 
 **빌드 결과**:
-- ✅ 빌드 성공
-- 이미지 크기: 21.5MB
+- ✅ 빌드 성공 (Successfully built bce19171d496)
+- ✅ 태그 생성 성공 (Successfully tagged phonebill-front:latest)
+- 이미지 크기: 50MB
 - 플랫폼: linux/amd64
 - 포트: 8080
+- 빌드 시간: 약 35.87초 (vite build 단계)
 
 ### 6. 생성된 이미지 확인
 ```bash
@@ -64,7 +66,7 @@ docker images | grep phonebill-front
 
 **확인 결과**:
 ```
-phonebill-front    latest    1bf77d798b4d   18 seconds ago   21.5MB
+phonebill-front    latest    bce19171d496   18 hours ago     50MB
 ```
 
 ## 빌드 세부 정보
@@ -100,7 +102,7 @@ curl http://localhost:8080/health
 ```
 
 ## 주요 특징
-- **Multi-stage Build**: 최종 이미지 크기 최적화 (21.5MB)
+- **Multi-stage Build**: 최종 이미지 크기 최적화 (50MB)
 - **SPA 지원**: React Router 등 클라이언트 사이드 라우팅 지원
 - **정적 파일 캐싱**: CSS/JS 파일 1년 캐싱 설정
 - **Health Check**: `/health` 엔드포인트로 컨테이너 상태 확인
