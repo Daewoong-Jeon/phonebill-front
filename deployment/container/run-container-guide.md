@@ -64,12 +64,12 @@ docker login acrdigitalgarage02.azurecr.io -u acrdigitalgarage02 -p {위에서 �
 
 ### 이미지 태깅
 ```bash
-docker tag phonebill-front:latest acrdigitalgarage02.azurecr.io/phonebill/phonebill-front:latest
+docker tag phonebill-front:latest acrdigitalgarage02.azurecr.io/phonebill/phonebill-front:dg0507
 ```
 
 ### 이미지 푸시
 ```bash
-docker push acrdigitalgarage02.azurecr.io/phonebill/phonebill-front:latest
+docker push acrdigitalgarage02.azurecr.io/phonebill/phonebill-front:dg0507
 ```
 
 ## 5. 런타임 환경변수 파일 생성
@@ -108,7 +108,7 @@ SERVER_PORT=3000
 
 docker run -d --name phonebill-front --rm -p ${SERVER_PORT}:8080 \
 -v ~/phonebill-front/public/runtime-env.js:/usr/share/nginx/html/runtime-env.js \
-acrdigitalgarage02.azurecr.io/phonebill/phonebill-front:latest
+acrdigitalgarage02.azurecr.io/phonebill/phonebill-front:dg0507
 ```
 
 ## 7. 실행 확인
